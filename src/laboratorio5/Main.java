@@ -32,7 +32,7 @@ public class Main {
 				sc.nextLine();
 			}
 			
-			System.out.println("Press enter to continue:");
+			System.out.println("Press enter to continue");
 			String next = sc.nextLine();
 			if(next.equals("6"))
 				option = 6;
