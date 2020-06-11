@@ -27,6 +27,7 @@ public class LostCallsTest {
 		lostcalls.addLostCall("51999999999");
 		assertTrue(lostcalls.searchLostCall("51999999999"));
 		
+		
 	}
 
 }

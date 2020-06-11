@@ -1,5 +1,4 @@
 package laboratorio5;
-
 import java.util.ArrayList;
 
 public class LostCalls {
@@ -39,10 +38,13 @@ public class LostCalls {
 		return true;
 	}
 	
-	public void printLostCalls() {
-		for(String i : lostcalls) {
+	public boolean printLostCalls() {
+		if(lostcalls.isEmpty())
+			return false;
+		for(String i : lostcalls)
 			System.out.println(i);
-		}
+		return true;
 	}
+	
 
 }

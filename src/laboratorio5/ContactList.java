@@ -15,13 +15,30 @@ public class ContactList {
 	}
 	
 	public boolean removeContact(String name) {
+		if(contacts.isEmpty())
+			return false;
 		for(Contact i : contacts) {
-			if(i.getName().equals(name.toUpperCase())) {
+			if(i.getName().equalsIgnoreCase(name)) {
 				contacts.remove(i);
-				return true;
+				break;
 			}
 		}
+		return true;
+	}
+	
+	public boolean isEmpty() {
+		if(contacts.isEmpty())
+			return true;
 		return false;
+	}
+	
+	public void showContacts() {
+		if(contacts.isEmpty())
+			System.out.println("There is no contacts!");
+		else
+			for(Contact i : contacts) {
+				System.out.println(i.toString());
+			}
 	}
 	
 	

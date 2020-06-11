@@ -20,7 +20,8 @@ public class Main {
 			System.out.println("[3] Add lost call");
 			System.out.println("[4] Show lost calls");
 			System.out.println("[5] Clear lost calls");
-			System.out.println("[6] Leave");
+			System.out.println("[6] Show contacts");
+			System.out.println("[7] Leave");
 			
 			try {
 				option = sc.nextInt();
@@ -32,13 +33,33 @@ public class Main {
 				sc.nextLine();
 			}
 			
-			System.out.println("Press enter to continue");
+			if(option==1)
+				IU.addContact();
+			
+			if(option==2)
+				IU.removeContact();
+			
+			if(option==3)
+				IU.addLostCall();
+			
+			if(option==4)
+				IU.printLostCalls();
+			
+			if(option==5)
+				IU.clearLostCalls();
+			
+			if(option==6)
+				IU.showContacts();
+			
+			System.out.println("------------------------");
+			System.out.printf("Press enter to continue\n");
 			String next = sc.nextLine();
-			if(next.equals("6"))
-				option = 6;
+			if(next.equals("7"))
+				option = 7;
 	
 			
-		}while(option!=6);
+		}while(option!=7);
+		sc.close();
 		System.out.println("Closing application...");
 
 	}
