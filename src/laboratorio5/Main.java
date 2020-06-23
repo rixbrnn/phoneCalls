@@ -11,7 +11,7 @@ public class Main {
 		InterfaceUser IU = new InterfaceUser(contacts,lostcalls);
 		Scanner sc = new Scanner(System.in);
 		
-		int option = -1;
+		Integer option = -1;
 		
 		do {
 			System.out.println("OPTIONS:");
@@ -23,16 +23,18 @@ public class Main {
 			System.out.println("[6] Show contacts");
 			System.out.println("[7] Leave");
 			
-			try {
-				option = sc.nextInt();
-				sc.nextLine();
-			}catch(InputMismatchException e) {
-				System.out.println("---------------");
-				System.out.println("INVALID OPTION!");
-				System.out.println("---------------");
-				sc.nextLine();
-			}
-			
+
+			int nextOption = -1;
+				try {
+					nextOption = sc.nextInt();
+						if(nextOption<1 || nextOption>7)
+							throw new InputMismatchException();
+					option = nextOption;
+				} catch (InputMismatchException e) {
+					System.out.println("Invalid Option!");
+					sc.nextLine();
+				}
+
 			if(option==1)
 				IU.addContact();
 			
@@ -51,12 +53,13 @@ public class Main {
 			if(option==6)
 				IU.showContacts();
 			
-			System.out.println("------------------------");
-			System.out.printf("Press enter to continue\n");
-			String next = sc.nextLine();
-			if(next.equals("7"))
-				option = 7;
-	
+			System.out.println("---------------");
+			//System.out.println("------------------------");
+			//System.out.printf("Press enter to continue\n");
+			//String next = sc.nextLine();
+			//if(next.equals("7"))
+			//	option = 7;
+			
 			
 		}while(option!=7);
 		sc.close();
